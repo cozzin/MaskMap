@@ -1,0 +1,46 @@
+PODS:
+  - Alamofire (5.0.0)
+  - FloatingPanel (1.7.4)
+  - Moya (14.0.0):
+    - Moya/Core (= 14.0.0)
+  - Moya/Core (14.0.0):
+    - Alamofire (~> 5.0)
+  - ObjectMapper (3.5.1)
+  - PromiseKit (6.13.1):
+    - PromiseKit/CorePromise (= 6.13.1)
+    - PromiseKit/Foundation (= 6.13.1)
+    - PromiseKit/UIKit (= 6.13.1)
+  - PromiseKit/CorePromise (6.13.1)
+  - PromiseKit/Foundation (6.13.1):
+    - PromiseKit/CorePromise
+  - PromiseKit/UIKit (6.13.1):
+    - PromiseKit/CorePromise
+  - SnapKit (5.0.1)
+
+DEPENDENCIES:
+  - FloatingPanel
+  - Moya (~> 14.0)
+  - ObjectMapper (~> 3.4)
+  - PromiseKit (~> 6.8)
+  - SnapKit (~> 5.0.0)
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - FloatingPanel
+    - Moya
+    - ObjectMapper
+    - PromiseKit
+    - SnapKit
+
+SPEC CHECKSUMS:
+  Alamofire: 58ff2bfb8daaacaa233d5c36e37b10a5248f59b1
+  FloatingPanel: 3c9d0e30fe350e1613157557769d2ec97f76b96b
+  Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
+  ObjectMapper: 70187b8941977c62ccfb423caf6b50be405cabf0
+  PromiseKit: 28fda91c973cc377875d8c0ea4f973013c05b6db
+  SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+
+PODFILE CHECKSUM: b0e4c08252cfdb6a16ee1fd86d6bbeb85afa3825
+
+COCOAPODS: 1.9.0
