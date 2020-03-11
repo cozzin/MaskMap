@@ -15,5 +15,28 @@ final class MapPresenter {
     init(_ viewController: ViewController) {
         self.viewController = viewController
     }
-        
+    
+    func convert(_ response: Entity.Search.API.Response) {
+        let stores = response.stores.map {
+            Entity.Search.ViewModel.Store(
+                name: $0.name,
+                address: $0.address,
+                type: $0.type,
+                location: $0.location,
+                stockDate: $0.stockDate,
+                remainStatus: $0.remainStatus
+            )
+        }
+        let filterdStores = stores.filter { $0.isOnSale }.sorted { $0.priority < $1.priority }
+        let viewModel = Entity.Search.ViewModel(stores: filterdStores)
+
+        DispatchQueue.main.async { [weak self] in
+            self?.viewController.updateUI(viewModel)
+        }
+    }
+    
+    func presentCurrentPosition(_ location: Entity.Map.Location) {
+        viewController.updateUI(Entity.Map.CurrentPosition.ViewModel(location: location))
+    }
+
 }

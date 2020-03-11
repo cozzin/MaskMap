@@ -15,9 +15,10 @@ final class SearchViewController: UIViewController {
         tableView
     }
     
-    private var viewModel: Entity.Search.StoresByAddress.ViewModel?
+    private var viewModel: Entity.Search.ViewModel?
     
     private var textDidBeginHandler: VoidHandler?
+    private var storeTapHandler: SenderToVoidHandler<(Entity.Search.ViewModel, Entity.Search.ViewModel.Store)>?
     
     private lazy var interactor: SearchInteractor = {
         let presenter = SearchPresenter(self)
@@ -37,6 +38,7 @@ final class SearchViewController: UIViewController {
         tableView.keyboardDismissMode = .onDrag
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.backgroundColor = .systemBackground
         return tableView
     }()
         
@@ -76,7 +78,11 @@ final class SearchViewController: UIViewController {
         self.textDidBeginHandler = textDidBeginHandler
     }
     
-    func updateUI(_ viewModel: Entity.Search.StoresByAddress.ViewModel) {
+    func didTapStore(_ storeTapHandler: @escaping SenderToVoidHandler<(Entity.Search.ViewModel, Entity.Search.ViewModel.Store)>) {
+        self.storeTapHandler = storeTapHandler
+    }
+    
+    func updateUI(_ viewModel: Entity.Search.ViewModel) {
         self.viewModel = viewModel
         tableView.reloadData()
     }
@@ -93,6 +99,12 @@ extension SearchViewController: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         interactor.searchStores(address: searchText)
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        if let text = searchBar.text {
+            interactor.searchStores(address: text)
+        }
     }
     
 }
@@ -121,6 +133,10 @@ extension SearchViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        
+        if let viewModel = viewModel {
+            storeTapHandler?((viewModel, viewModel.stores[indexPath.row]))
+        }
     }
 
 }

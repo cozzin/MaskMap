@@ -22,13 +22,15 @@ struct APIClient<Request, Response> where Request: TargetType, Response: BaseMap
         let provider = MoyaProvider<Request>()
         
         return Promise<Response> { resolver in
-            provider.request(target, completion: { (result) in
+            provider.request(target, completion: { result in
                 switch result {
                 case let .success(moyaResponse):
                     guard moyaResponse.statusCode == 200 else {
                         resolver.reject(
                             Exception.networkLayer(code: moyaResponse.statusCode)
                         )
+                        let json = try? JSONSerialization.jsonObject(with: moyaResponse.data, options: [])
+                        print("error: \(json)")
                         return
                     }
 

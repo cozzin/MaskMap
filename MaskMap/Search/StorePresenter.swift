@@ -16,9 +16,9 @@ final class SearchPresenter {
         self.viewController = viewController
     }
     
-    func convert(_ response: Entity.Search.StoresByAddress.API.Response) {
+    func convert(_ response: Entity.Search.API.Response) {
         let stores = response.stores.map {
-            Entity.Search.StoresByAddress.ViewModel.Store(
+            Entity.Search.ViewModel.Store(
                 name: $0.name,
                 address: $0.address,
                 type: $0.type,
@@ -27,7 +27,8 @@ final class SearchPresenter {
                 remainStatus: $0.remainStatus
             )
         }
-        let viewModel = Entity.Search.StoresByAddress.ViewModel(stores: stores)
+        let filterdStores = stores.filter { $0.isOnSale }.sorted { $0.priority < $1.priority }
+        let viewModel = Entity.Search.ViewModel(stores: filterdStores)
 
         DispatchQueue.main.async { [weak self] in
             self?.viewController.updateUI(viewModel)

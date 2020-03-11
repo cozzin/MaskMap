@@ -9,3 +9,4 @@
 import Foundation
 
 typealias VoidHandler = () -> Void
+typealias SenderToVoidHandler<Sender> = (Sender) -> Void

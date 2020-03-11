@@ -5,16 +5,17 @@
 //  Created by SeongHo.Hong on 2020/03/11.
 //  Copyright © 2020 Cozzin. All rights reserved.
 //
+//  Icon made by Freepik from www.flaticon.com
 
 import UIKit
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        FirebaseApp.configure()
         return true
     }
 

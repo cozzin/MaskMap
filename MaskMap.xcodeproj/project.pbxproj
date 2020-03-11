@@ -23,7 +23,7 @@
 		CE3396ED241871610015965B /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3396EC241871610015965B /* APIClient.swift */; };
 		CE3396EF241880130015965B /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3396EE241880130015965B /* SearchViewController.swift */; };
 		CE33EF40241880B0006724BB /* SearchInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE33EF3F241880B0006724BB /* SearchInteractor.swift */; };
-		CE33EF41241880B0006724BB /* StoreEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE33EF3E241880AF006724BB /* StoreEntity.swift */; };
+		CE33EF41241880B0006724BB /* SearchEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE33EF3E241880AF006724BB /* SearchEntity.swift */; };
 		CE33EF42241880B0006724BB /* StorePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE33EF3D241880AF006724BB /* StorePresenter.swift */; };
 		CE33EF4524188374006724BB /* SearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE33EF4424188374006724BB /* SearchTableViewCell.swift */; };
 		CE33EF49241883C2006724BB /* CellRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE33EF48241883C2006724BB /* CellRegister.swift */; };
@@ -32,6 +32,12 @@
 		CE33EF5024188E7F006724BB /* DateFormatTransform.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE33EF4F24188E7F006724BB /* DateFormatTransform.swift */; };
 		CE33EF522418912D006724BB /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE33EF512418912D006724BB /* UIImage+Extension.swift */; };
 		CE33EF5424189421006724BB /* SearchPanelLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE33EF5324189421006724BB /* SearchPanelLayout.swift */; };
+		CE33EF572418B48D006724BB /* StoreAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE33EF562418B48D006724BB /* StoreAnnotation.swift */; };
+		CE33EF592418B69C006724BB /* StoreAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE33EF582418B69C006724BB /* StoreAnnotationView.swift */; };
+		CE33EF5B2418B854006724BB /* AnnotationRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE33EF5A2418B854006724BB /* AnnotationRegister.swift */; };
+		CE33EF6424191908006724BB /* InfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE33EF6324191908006724BB /* InfoView.swift */; };
+		CE33EF6624191CF2006724BB /* PostOffice.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE33EF6524191CF1006724BB /* PostOffice.swift */; };
+		CE33EF682419200A006724BB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CE33EF672419200A006724BB /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,7 +71,7 @@
 		CE3396EC241871610015965B /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		CE3396EE241880130015965B /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		CE33EF3D241880AF006724BB /* StorePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorePresenter.swift; sourceTree = "<group>"; };
-		CE33EF3E241880AF006724BB /* StoreEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreEntity.swift; sourceTree = "<group>"; };
+		CE33EF3E241880AF006724BB /* SearchEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchEntity.swift; sourceTree = "<group>"; };
 		CE33EF3F241880B0006724BB /* SearchInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchInteractor.swift; sourceTree = "<group>"; };
 		CE33EF4424188374006724BB /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		CE33EF48241883C2006724BB /* CellRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellRegister.swift; sourceTree = "<group>"; };
@@ -74,6 +80,12 @@
 		CE33EF4F24188E7F006724BB /* DateFormatTransform.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatTransform.swift; sourceTree = "<group>"; };
 		CE33EF512418912D006724BB /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		CE33EF5324189421006724BB /* SearchPanelLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchPanelLayout.swift; sourceTree = "<group>"; };
+		CE33EF562418B48D006724BB /* StoreAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreAnnotation.swift; sourceTree = "<group>"; };
+		CE33EF582418B69C006724BB /* StoreAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreAnnotationView.swift; sourceTree = "<group>"; };
+		CE33EF5A2418B854006724BB /* AnnotationRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnotationRegister.swift; sourceTree = "<group>"; };
+		CE33EF6324191908006724BB /* InfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoView.swift; sourceTree = "<group>"; };
+		CE33EF6524191CF1006724BB /* PostOffice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostOffice.swift; sourceTree = "<group>"; };
+		CE33EF672419200A006724BB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D8DE5861EA6E1595188E2B0C /* Pods_MaskMapTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MaskMapTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3DC682AE61ECC4E3071EDFD /* Pods-MaskMapTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MaskMapTests.release.xcconfig"; path = "Target Support Files/Pods-MaskMapTests/Pods-MaskMapTests.release.xcconfig"; sourceTree = "<group>"; };
 		F3C089368295C8E6A3E10183 /* Pods_MaskMap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MaskMap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -153,6 +165,7 @@
 				CE3396C7241868F40015965B /* Assets.xcassets */,
 				CE3396C9241868F40015965B /* LaunchScreen.storyboard */,
 				CE3396CC241868F40015965B /* Info.plist */,
+				CE33EF672419200A006724BB /* GoogleService-Info.plist */,
 			);
 			path = MaskMap;
 			sourceTree = "<group>";
@@ -169,10 +182,12 @@
 		CE3396E0241869810015965B /* Map */ = {
 			isa = PBXGroup;
 			children = (
+				CE33EF62241918FC006724BB /* Info */,
+				CE33EF552418B47E006724BB /* Annotation */,
+				CE3396EA24186BAF0015965B /* MapEntity.swift */,
 				CE3396C2241868F20015965B /* ViewController.swift */,
 				CE3396E12418699C0015965B /* MapInteractor.swift */,
 				CE3396E3241869A40015965B /* MapPresenter.swift */,
-				CE3396EA24186BAF0015965B /* MapEntity.swift */,
 			);
 			path = Map;
 			sourceTree = "<group>";
@@ -195,8 +210,9 @@
 				CE3396EE241880130015965B /* SearchViewController.swift */,
 				CE33EF3F241880B0006724BB /* SearchInteractor.swift */,
 				CE33EF3D241880AF006724BB /* StorePresenter.swift */,
-				CE33EF3E241880AF006724BB /* StoreEntity.swift */,
+				CE33EF3E241880AF006724BB /* SearchEntity.swift */,
 				CE33EF5324189421006724BB /* SearchPanelLayout.swift */,
+				CE33EF6524191CF1006724BB /* PostOffice.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -213,6 +229,7 @@
 			isa = PBXGroup;
 			children = (
 				CE33EF48241883C2006724BB /* CellRegister.swift */,
+				CE33EF5A2418B854006724BB /* AnnotationRegister.swift */,
 				CE33EF512418912D006724BB /* UIImage+Extension.swift */,
 			);
 			path = Extension;
@@ -225,6 +242,23 @@
 				CE33EF4F24188E7F006724BB /* DateFormatTransform.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		CE33EF552418B47E006724BB /* Annotation */ = {
+			isa = PBXGroup;
+			children = (
+				CE33EF562418B48D006724BB /* StoreAnnotation.swift */,
+				CE33EF582418B69C006724BB /* StoreAnnotationView.swift */,
+			);
+			path = Annotation;
+			sourceTree = "<group>";
+		};
+		CE33EF62241918FC006724BB /* Info */ = {
+			isa = PBXGroup;
+			children = (
+				CE33EF6324191908006724BB /* InfoView.swift */,
+			);
+			path = Info;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -312,6 +346,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE3396CB241868F40015965B /* LaunchScreen.storyboard in Resources */,
+				CE33EF682419200A006724BB /* GoogleService-Info.plist in Resources */,
 				CE3396C8241868F40015965B /* Assets.xcassets in Resources */,
 				CE3396C6241868F20015965B /* Main.storyboard in Resources */,
 			);
@@ -395,10 +430,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE33EF572418B48D006724BB /* StoreAnnotation.swift in Sources */,
+				CE33EF5B2418B854006724BB /* AnnotationRegister.swift in Sources */,
 				CE3396C3241868F20015965B /* ViewController.swift in Sources */,
 				CE33EF5424189421006724BB /* SearchPanelLayout.swift in Sources */,
 				CE33EF522418912D006724BB /* UIImage+Extension.swift in Sources */,
 				CE3396BF241868F20015965B /* AppDelegate.swift in Sources */,
+				CE33EF6624191CF2006724BB /* PostOffice.swift in Sources */,
 				CE3396E924186BA00015965B /* Entity.swift in Sources */,
 				CE33EF4B2418892B006724BB /* Handler.swift in Sources */,
 				CE3396EF241880130015965B /* SearchViewController.swift in Sources */,
@@ -408,12 +446,14 @@
 				CE3396C1241868F20015965B /* SceneDelegate.swift in Sources */,
 				CE33EF4524188374006724BB /* SearchTableViewCell.swift in Sources */,
 				CE33EF49241883C2006724BB /* CellRegister.swift in Sources */,
+				CE33EF6424191908006724BB /* InfoView.swift in Sources */,
 				CE33EF42241880B0006724BB /* StorePresenter.swift in Sources */,
 				CE33EF40241880B0006724BB /* SearchInteractor.swift in Sources */,
 				CE33EF5024188E7F006724BB /* DateFormatTransform.swift in Sources */,
 				CE33EF4D24188D11006724BB /* DelayScheduler.swift in Sources */,
 				CE3396E22418699C0015965B /* MapInteractor.swift in Sources */,
-				CE33EF41241880B0006724BB /* StoreEntity.swift in Sources */,
+				CE33EF592418B69C006724BB /* StoreAnnotationView.swift in Sources */,
+				CE33EF41241880B0006724BB /* SearchEntity.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -505,7 +545,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -559,7 +599,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

@@ -12,6 +12,8 @@ target 'MaskMap' do
   pod 'PromiseKit', '~> 6.8'
   pod 'SnapKit', '~> 5.0.0'
   pod 'FloatingPanel'
+  pod 'ISHHoverBar'
+  pod 'Firebase/Analytics'
 
   target 'MaskMapTests' do
     inherit! :search_paths

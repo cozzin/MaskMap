@@ -21,9 +21,11 @@ final class SearchInteractor {
     
     func searchStores(address: String) {
         delayScheduler.schedule {
+            let officalAddress = PostOffice.convertLongCityName(address)
+
             firstly {
-                APIClient<Entity.Search.StoresByAddress.API.Request, Entity.Search.StoresByAddress.API.Response>
-                    .request(.storesByAddress(address: address))
+                APIClient<Entity.Search.API.Request, Entity.Search.API.Response>
+                    .request(.storesByAddress(address: officalAddress))
             }.done { response in
                 self.presenter.convert(response)
             }

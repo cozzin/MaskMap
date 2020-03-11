@@ -1,10 +1,76 @@
 PODS:
   - Alamofire (5.0.0)
+  - Firebase/Analytics (6.19.0):
+    - Firebase/Core
+  - Firebase/Core (6.19.0):
+    - Firebase/CoreOnly
+    - FirebaseAnalytics (= 6.3.1)
+  - Firebase/CoreOnly (6.19.0):
+    - FirebaseCore (= 6.6.4)
+  - FirebaseAnalytics (6.3.1):
+    - FirebaseCore (~> 6.6)
+    - FirebaseInstallations (~> 1.1)
+    - GoogleAppMeasurement (= 6.3.1)
+    - GoogleUtilities/AppDelegateSwizzler (~> 6.0)
+    - GoogleUtilities/MethodSwizzler (~> 6.0)
+    - GoogleUtilities/Network (~> 6.0)
+    - "GoogleUtilities/NSData+zlib (~> 6.0)"
+    - nanopb (= 0.3.9011)
+  - FirebaseCore (6.6.4):
+    - FirebaseCoreDiagnostics (~> 1.2)
+    - FirebaseCoreDiagnosticsInterop (~> 1.2)
+    - GoogleUtilities/Environment (~> 6.5)
+    - GoogleUtilities/Logger (~> 6.5)
+  - FirebaseCoreDiagnostics (1.2.2):
+    - FirebaseCoreDiagnosticsInterop (~> 1.2)
+    - GoogleDataTransportCCTSupport (~> 2.0)
+    - GoogleUtilities/Environment (~> 6.5)
+    - GoogleUtilities/Logger (~> 6.5)
+    - nanopb (~> 0.3.901)
+  - FirebaseCoreDiagnosticsInterop (1.2.0)
+  - FirebaseInstallations (1.1.0):
+    - FirebaseCore (~> 6.6)
+    - GoogleUtilities/UserDefaults (~> 6.5)
+    - PromisesObjC (~> 1.2)
   - FloatingPanel (1.7.4)
+  - GoogleAppMeasurement (6.3.1):
+    - GoogleUtilities/AppDelegateSwizzler (~> 6.0)
+    - GoogleUtilities/MethodSwizzler (~> 6.0)
+    - GoogleUtilities/Network (~> 6.0)
+    - "GoogleUtilities/NSData+zlib (~> 6.0)"
+    - nanopb (= 0.3.9011)
+  - GoogleDataTransport (5.0.0)
+  - GoogleDataTransportCCTSupport (2.0.0):
+    - GoogleDataTransport (~> 5.0)
+    - nanopb (~> 0.3.901)
+  - GoogleUtilities/AppDelegateSwizzler (6.5.1):
+    - GoogleUtilities/Environment
+    - GoogleUtilities/Logger
+    - GoogleUtilities/Network
+  - GoogleUtilities/Environment (6.5.1)
+  - GoogleUtilities/Logger (6.5.1):
+    - GoogleUtilities/Environment
+  - GoogleUtilities/MethodSwizzler (6.5.1):
+    - GoogleUtilities/Logger
+  - GoogleUtilities/Network (6.5.1):
+    - GoogleUtilities/Logger
+    - "GoogleUtilities/NSData+zlib"
+    - GoogleUtilities/Reachability
+  - "GoogleUtilities/NSData+zlib (6.5.1)"
+  - GoogleUtilities/Reachability (6.5.1):
+    - GoogleUtilities/Logger
+  - GoogleUtilities/UserDefaults (6.5.1):
+    - GoogleUtilities/Logger
+  - ISHHoverBar (1.0.1)
   - Moya (14.0.0):
     - Moya/Core (= 14.0.0)
   - Moya/Core (14.0.0):
     - Alamofire (~> 5.0)
+  - nanopb (0.3.9011):
+    - nanopb/decode (= 0.3.9011)
+    - nanopb/encode (= 0.3.9011)
+  - nanopb/decode (0.3.9011)
+  - nanopb/encode (0.3.9011)
   - ObjectMapper (3.5.1)
   - PromiseKit (6.13.1):
     - PromiseKit/CorePromise (= 6.13.1)
@@ -15,10 +81,13 @@ PODS:
     - PromiseKit/CorePromise
   - PromiseKit/UIKit (6.13.1):
     - PromiseKit/CorePromise
+  - PromisesObjC (1.2.8)
   - SnapKit (5.0.1)
 
 DEPENDENCIES:
+  - Firebase/Analytics
   - FloatingPanel
+  - ISHHoverBar
   - Moya (~> 14.0)
   - ObjectMapper (~> 3.4)
   - PromiseKit (~> 6.8)
@@ -27,20 +96,46 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - Alamofire
+    - Firebase
+    - FirebaseAnalytics
+    - FirebaseCore
+    - FirebaseCoreDiagnostics
+    - FirebaseCoreDiagnosticsInterop
+    - FirebaseInstallations
     - FloatingPanel
+    - GoogleAppMeasurement
+    - GoogleDataTransport
+    - GoogleDataTransportCCTSupport
+    - GoogleUtilities
+    - ISHHoverBar
     - Moya
+    - nanopb
     - ObjectMapper
     - PromiseKit
+    - PromisesObjC
     - SnapKit
 
 SPEC CHECKSUMS:
   Alamofire: 58ff2bfb8daaacaa233d5c36e37b10a5248f59b1
+  Firebase: d55ddb0e0bb3207166cddc028647833d8a1b5b6f
+  FirebaseAnalytics: 572e467f3d977825266e8ccd52674aa3e6f47eac
+  FirebaseCore: ed0a24c758a57c2b88c5efa8e6a8195e868af589
+  FirebaseCoreDiagnostics: e9b4cd8ba60dee0f2d13347332e4b7898cca5b61
+  FirebaseCoreDiagnosticsInterop: 296e2c5f5314500a850ad0b83e9e7c10b011a850
+  FirebaseInstallations: 575cd32f2aec0feeb0e44f5d0110a09e5e60b47b
   FloatingPanel: 3c9d0e30fe350e1613157557769d2ec97f76b96b
+  GoogleAppMeasurement: c29d405ff76e18551b5d158eaba6753fda8c7542
+  GoogleDataTransport: a857c6a002d201b524dd4bc2ed7e7355ed07e785
+  GoogleDataTransportCCTSupport: 32f75fbe904c82772fcbb6b6bd4525bfb6f2a862
+  GoogleUtilities: 06eb53bb579efe7099152735900dd04bf09e7275
+  ISHHoverBar: 44d5161b7c815a60468d181e3ce70fbbfa5bef2a
   Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
+  nanopb: 18003b5e52dab79db540fe93fe9579f399bd1ccd
   ObjectMapper: 70187b8941977c62ccfb423caf6b50be405cabf0
   PromiseKit: 28fda91c973cc377875d8c0ea4f973013c05b6db
+  PromisesObjC: c119f3cd559f50b7ae681fa59dc1acd19173b7e6
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
 
-PODFILE CHECKSUM: b0e4c08252cfdb6a16ee1fd86d6bbeb85afa3825
+PODFILE CHECKSUM: 2f90d0d9869310864e24adfc20cdd884206a6039
 
 COCOAPODS: 1.9.0
