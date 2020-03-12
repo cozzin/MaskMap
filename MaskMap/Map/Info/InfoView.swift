@@ -47,6 +47,7 @@ extension InfoView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: UITableViewCell = UITableViewCell(style: .value1, reuseIdentifier: "reuseIdentifier")
         let guide = guides[indexPath.row]
+        cell.selectionStyle = .none
         cell.textLabel?.font = UIFont.boldSystemFont(ofSize: 13.0)
         cell.textLabel?.text = guide.description
         cell.imageView?.clipsToBounds = true

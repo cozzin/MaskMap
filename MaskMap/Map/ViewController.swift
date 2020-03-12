@@ -23,9 +23,12 @@ final class ViewController: UIViewController {
     
     private lazy var panel: FloatingPanelController = {
         let panel: FloatingPanelController = FloatingPanelController()
+        panel.surfaceView.cornerRadius = 9.0
         panel.surfaceView.backgroundColor = .systemBackground
         return panel
     }()
+    
+    private lazy var searchPanelLayout: SearchPanelLayout = SearchPanelLayout()
     
     private lazy var searchViewController: SearchViewController = {
         let searchViewController = SearchViewController()
@@ -190,7 +193,7 @@ extension ViewController: MKMapViewDelegate {
     }
         
     func mapViewDidChangeVisibleRegion(_ mapView: MKMapView) {
-         searchByCurrentPosition()
+        searchByCurrentPosition()
     }
     
     private func searchByCurrentPosition() {
@@ -211,7 +214,7 @@ extension ViewController: MKMapViewDelegate {
 extension ViewController: FloatingPanelControllerDelegate {
     
     func floatingPanel(_ vc: FloatingPanelController, layoutFor newCollection: UITraitCollection) -> FloatingPanelLayout? {
-        SearchPanelLayout()
+        searchPanelLayout
     }
     
     func floatingPanelWillBeginDragging(_ vc: FloatingPanelController) {

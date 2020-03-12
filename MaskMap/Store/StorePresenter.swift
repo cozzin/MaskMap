@@ -42,10 +42,6 @@ final class StorePresenter {
             rows.append(Entity.Store.ViewModel.Row(store: store, title: "네이버지도", content: nil, rowType: .navigaiton(.naverMap)))
         }
         
-        if canOpen(.googleMap) {
-            rows.append(Entity.Store.ViewModel.Row(store: store, title: "구글지도", content: nil, rowType: .navigaiton(.googleMap)))
-        }
-
         return Entity.Store.ViewModel(rows: rows)
     }
     

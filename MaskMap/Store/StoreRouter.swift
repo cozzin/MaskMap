@@ -35,11 +35,6 @@ final class StoreRouter {
             ]
 
             MKMapItem.openMaps(with: [MKMapItem.forCurrentLocation(), MKMapItem(placemark: placemark)], launchOptions: launchOptions)
-        case .googleMap:
-            let url = URL(string:
-            "comgooglemaps://?saddr=&daddr=\(location.latitude),\(location.longitude)&directionsmode=driving")!
-            
-            UIApplication.shared.open(url, options: [:], completionHandler: nil)
         case .kakaoMap:
             let url = URL(string: "kakaomap://look?p=\(location.latitude),\(location.longitude)")!
             

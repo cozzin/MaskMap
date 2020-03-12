@@ -18,7 +18,7 @@ final class MapInteractor: NSObject {
     
     private lazy var delayScheduler: DelayScheduler = DelayScheduler()
     
-    private lazy var canSearchByLocation: Bool = false
+    private lazy var canSearchByLocation: Bool = true
     
     private lazy var locationManager: CLLocationManager = {
         let locationManager = CLLocationManager()

@@ -21,10 +21,13 @@ final class MapRouter: NSObject {
     
     func presentStoreViewController(_ store: Entity.Search.ViewModel.Store) {
         let panel: FloatingPanelController = FloatingPanelController()
-        let storeViewController: StoreViewController = StoreViewController(store)
 
+        panel.surfaceView.cornerRadius = 9.0
+        panel.surfaceView.backgroundColor = .systemBackground
         panel.delegate = self
         panel.isRemovalInteractionEnabled = true
+
+        let storeViewController: StoreViewController = StoreViewController(store)
         panel.set(contentViewController: storeViewController)
         panel.track(scrollView: storeViewController.scrollView)
         

@@ -17,12 +17,9 @@ extension Entity.Store {
                     case appleMap
                     case naverMap
                     case kakaoMap
-                    case googleMap
                     
                     var canOpen: Bool {
                         switch self {
-                        case .googleMap:
-                            return UIApplication.shared.canOpenURL(URL(string: "comgooglemaps://")!)
                         case .naverMap:
                             return UIApplication.shared.canOpenURL(URL(string: "nmap://")!)
                         case .kakaoMap:

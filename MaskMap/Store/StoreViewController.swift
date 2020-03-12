@@ -56,7 +56,7 @@ final class StoreViewController: UIViewController {
             $0.top.equalToSuperview().inset(20.0)
             $0.leading.trailing.bottom.equalToSuperview()
         }
-                
+        
         bannerView.adUnitID = Entity.AD.unitID
         bannerView.rootViewController = self
         bannerView.load(GADRequest())
