@@ -13,6 +13,8 @@ final class MapRouter: NSObject {
     
     private unowned let viewController: ViewController
     
+    private weak var panel: FloatingPanelController?
+    
     init(_ viewController: ViewController) {
         self.viewController = viewController
     }
@@ -26,7 +28,15 @@ final class MapRouter: NSObject {
         panel.set(contentViewController: storeViewController)
         panel.track(scrollView: storeViewController.scrollView)
         
-        viewController.present(panel, animated: true)
+        if let existingPanel = self.panel {
+            existingPanel.dismiss(animated: true, completion: { [weak self] in
+                self?.viewController.present(panel, animated: true)
+                self?.panel = panel
+            })
+        } else {
+            viewController.present(panel, animated: true)
+            self.panel = panel
+        }
     }
     
 }

@@ -18,6 +18,8 @@ final class MapInteractor: NSObject {
     
     private lazy var delayScheduler: DelayScheduler = DelayScheduler()
     
+    private lazy var canSearchByLocation: Bool = false
+    
     private lazy var locationManager: CLLocationManager = {
         let locationManager = CLLocationManager()
         locationManager.requestWhenInUseAuthorization()
@@ -35,9 +37,19 @@ final class MapInteractor: NSObject {
     func startUpdatingLocation() {
         locationManager.startUpdatingLocation()
     }
+    
+    func enableSearchByLocation() {
+        canSearchByLocation = true
+    }
         
     func search(by location: Entity.Map.Location, visibleMapRect: Entity.Map.Rect) {
-        delayScheduler.schedule {
+        delayScheduler.schedule { [weak self] in
+            guard self?.canSearchByLocation ?? false else {
+                return
+            }
+            
+            self?.canSearchByLocation = false
+            
             firstly {
                 APIClient<Entity.Search.API.Request, Entity.Search.API.Response>
                     .request(
@@ -48,7 +60,7 @@ final class MapInteractor: NSObject {
                         )
                     )
             }.done { response in
-                self.presenter.convert(response)
+                self?.presenter.convert(response)
             }
         }
     }

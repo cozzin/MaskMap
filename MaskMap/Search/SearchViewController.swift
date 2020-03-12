@@ -97,8 +97,7 @@ extension SearchViewController: UISearchBarDelegate {
         textDidBeginHandler?()
     }
     
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        interactor.searchStores(address: searchText)
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {        interactor.searchStores(address: searchText)
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {

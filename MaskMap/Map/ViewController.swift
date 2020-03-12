@@ -56,7 +56,19 @@ final class ViewController: UIViewController {
     private lazy var hoverBar: ISHHoverBar = {
         let hoverBar: ISHHoverBar = ISHHoverBar()
         let trackingItem = MKUserTrackingBarButtonItem(mapView: mapView)
-        hoverBar.items = [trackingItem]
+        
+        let refreshButton: UIButton = UIButton(frame: .zero)
+        let config = UIImage.SymbolConfiguration(weight: .thin)
+        let image = UIImage(systemName: "arrow.clockwise", withConfiguration: config)
+        refreshButton.contentVerticalAlignment = .fill
+        refreshButton.contentHorizontalAlignment = .fill
+        refreshButton.imageEdgeInsets = UIEdgeInsets(top: 6, left: 5, bottom: 7, right: 5)
+        refreshButton.imageView?.contentMode = .scaleAspectFit
+        refreshButton.setImage(image, for: .normal)
+        refreshButton.addTarget(self, action: #selector(didTapRefreshButton(_:)), for: .touchUpInside)
+        let refreshItem = UIBarButtonItem(customView: refreshButton)
+        
+        hoverBar.items = [trackingItem, refreshItem]
         return hoverBar
     }()
     
@@ -66,6 +78,13 @@ final class ViewController: UIViewController {
     }()
       
     private lazy var userTrackingButton: MKUserTrackingButton = MKUserTrackingButton(mapView: mapView)
+    
+    private lazy var searchButton: UIButton = {
+        let searchButton: UIButton = UIButton()
+        searchButton.titleLabel?.text = "현재 위치로 다시 찾아보기"
+        searchButton.tintColor = .systemGreen
+        return searchButton
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -139,6 +158,12 @@ final class ViewController: UIViewController {
     private func didTapInfoButton(_ sender: UIButton) {
         interactor.startUpdatingLocation()
     }
+    
+    @objc
+    private func didTapRefreshButton(_ sender: UIButton) {
+        interactor.enableSearchByLocation()
+        searchByCurrentPosition()
+    }
 
 }
 
@@ -161,9 +186,14 @@ extension ViewController: MKMapViewDelegate {
         }
         
         router.presentStoreViewController(storeAnnotation.store)
+        _ = searchViewController.resignFirstResponder()
     }
         
     func mapViewDidChangeVisibleRegion(_ mapView: MKMapView) {
+         searchByCurrentPosition()
+    }
+    
+    private func searchByCurrentPosition() {
         let coordinator = Entity.Map.Location(
             latitude: mapView.centerCoordinate.latitude,
             longitude: mapView.centerCoordinate.longitude
