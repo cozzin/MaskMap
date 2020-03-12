@@ -45,6 +45,7 @@
 		CE33EF732419C36A006724BB /* MapRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE33EF722419C36A006724BB /* MapRouter.swift */; };
 		CE33EF752419C7ED006724BB /* StoreRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE33EF742419C7ED006724BB /* StoreRouter.swift */; };
 		CE33EF772419D1BC006724BB /* StorePanelLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE33EF762419D1BC006724BB /* StorePanelLayout.swift */; };
+		CE33EF7A2419DEA2006724BB /* ADEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE33EF792419DEA2006724BB /* ADEntity.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +101,7 @@
 		CE33EF722419C36A006724BB /* MapRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapRouter.swift; sourceTree = "<group>"; };
 		CE33EF742419C7ED006724BB /* StoreRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreRouter.swift; sourceTree = "<group>"; };
 		CE33EF762419D1BC006724BB /* StorePanelLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorePanelLayout.swift; sourceTree = "<group>"; };
+		CE33EF792419DEA2006724BB /* ADEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ADEntity.swift; sourceTree = "<group>"; };
 		D8DE5861EA6E1595188E2B0C /* Pods_MaskMapTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MaskMapTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3DC682AE61ECC4E3071EDFD /* Pods-MaskMapTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MaskMapTests.release.xcconfig"; path = "Target Support Files/Pods-MaskMapTests/Pods-MaskMapTests.release.xcconfig"; sourceTree = "<group>"; };
 		F3C089368295C8E6A3E10183 /* Pods_MaskMap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MaskMap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -169,6 +171,7 @@
 		CE3396BD241868F20015965B /* MaskMap */ = {
 			isa = PBXGroup;
 			children = (
+				CE33EF782419DE94006724BB /* AD */,
 				CE33EF692419BAE1006724BB /* Store */,
 				CE33EF47241883B5006724BB /* Extension */,
 				CE3396E724186B930015965B /* Common */,
@@ -288,6 +291,14 @@
 				CE33EF762419D1BC006724BB /* StorePanelLayout.swift */,
 			);
 			path = Store;
+			sourceTree = "<group>";
+		};
+		CE33EF782419DE94006724BB /* AD */ = {
+			isa = PBXGroup;
+			children = (
+				CE33EF792419DEA2006724BB /* ADEntity.swift */,
+			);
+			path = AD;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -470,6 +481,7 @@
 				CE33EF6624191CF2006724BB /* PostOffice.swift in Sources */,
 				CE3396E924186BA00015965B /* Entity.swift in Sources */,
 				CE33EF4B2418892B006724BB /* Handler.swift in Sources */,
+				CE33EF7A2419DEA2006724BB /* ADEntity.swift in Sources */,
 				CE3396EF241880130015965B /* SearchViewController.swift in Sources */,
 				CE33EF6B2419BAF0006724BB /* StoreViewController.swift in Sources */,
 				CE33EF752419C7ED006724BB /* StoreRouter.swift in Sources */,
@@ -651,7 +663,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = T5T6697UB7;
 				INFOPLIST_FILE = MaskMap/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -659,6 +671,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.cozzin.MaskMap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -672,7 +685,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = T5T6697UB7;
 				INFOPLIST_FILE = MaskMap/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -680,6 +693,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.cozzin.MaskMap;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

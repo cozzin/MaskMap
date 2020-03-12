@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
 final class StoreViewController: UIViewController {
     
@@ -29,8 +30,12 @@ final class StoreViewController: UIViewController {
         tableView.register(StoreTableViewCell.self)
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.tableFooterView = UIView()
         return tableView
+    }()
+    
+    private lazy var bannerView: GADBannerView = {
+        let bannerView: GADBannerView = GADBannerView(adSize: kGADAdSizeBanner)
+        return bannerView
     }()
     
     init(_ store: Entity.Search.ViewModel.Store) {
@@ -46,11 +51,15 @@ final class StoreViewController: UIViewController {
         super.viewDidLoad()
         
         view.addSubview(tableView)
-        
+
         tableView.snp.makeConstraints {
             $0.top.equalToSuperview().inset(20.0)
             $0.leading.trailing.bottom.equalToSuperview()
         }
+                
+        bannerView.adUnitID = Entity.AD.unitID
+        bannerView.rootViewController = self
+        bannerView.load(GADRequest())
     }
     
 }
@@ -68,6 +77,14 @@ extension StoreViewController: UITableViewDataSource {
         cell.configure(row)
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        bannerView
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        kGADAdSizeBanner.size.height
     }
     
 }

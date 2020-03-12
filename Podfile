@@ -14,6 +14,7 @@ target 'MaskMap' do
   pod 'FloatingPanel'
   pod 'ISHHoverBar'
   pod 'Firebase/Analytics'
+  pod 'Firebase/AdMob'
 
   target 'MaskMapTests' do
     inherit! :search_paths
