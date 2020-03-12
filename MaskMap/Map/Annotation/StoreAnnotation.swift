@@ -10,7 +10,8 @@ import Foundation
 import MapKit
 
 final class StoreAnnotation: NSObject, MKAnnotation {
-    
+
+    let store: Entity.Search.ViewModel.Store
     let title: String?
     let address: String
     let coordinate: CLLocationCoordinate2D
@@ -26,6 +27,7 @@ final class StoreAnnotation: NSObject, MKAnnotation {
     private let remainStatus: Entity.Store.RemainStatus
     
     init(_ store: Entity.Search.ViewModel.Store) {
+        self.store = store
         self.title = store.name
         self.address = store.address
         self.remainStatus = store.remainStatus

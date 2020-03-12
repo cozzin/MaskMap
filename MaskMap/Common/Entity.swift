@@ -22,6 +22,17 @@ extension Entity {
             case pharmacy = "01"
             case postOffice = "02"
             case nonghyup = "03"
+            
+            var title: String {
+                switch self {
+                case .pharmacy:
+                    return "약국"
+                case .postOffice:
+                    return "우체국"
+                case .nonghyup:
+                    return "농협"
+                }
+            }
         }
         
         /// 재고 상태[100개 이상(녹색): 'plenty' / 30개 이상 100개미만(노랑색): 'some' / 2개 이상 30개 미만(빨강색): 'few' / 1개 이하(회색): 'empty']

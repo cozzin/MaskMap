@@ -19,12 +19,14 @@ final class ViewController: UIViewController {
         return interactor
     }()
     
+    private lazy var router: MapRouter = MapRouter(self)
+    
     private lazy var panel: FloatingPanelController = {
         let panel: FloatingPanelController = FloatingPanelController()
         panel.surfaceView.backgroundColor = .systemBackground
         return panel
     }()
-
+    
     private lazy var searchViewController: SearchViewController = {
         let searchViewController = SearchViewController()
         
@@ -35,6 +37,7 @@ final class ViewController: UIViewController {
             self?.addAnnotations(searchResult)
             self?.moveMapPostion(at: store.location)
             self?.panel.move(to: .tip, animated: true)
+            self?.router.presentStoreViewController(store)
         }
         
         return searchViewController
@@ -149,6 +152,15 @@ extension ViewController: MKMapViewDelegate {
         let view = mapView.dequeue(for: annotation) as StoreAnnotationView
         view.configure(annotation)
         return view
+    }
+    
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        guard let storeAnnotationView = view as? StoreAnnotationView,
+            let storeAnnotation = storeAnnotationView.storeAnnotation else {
+                return
+        }
+        
+        router.presentStoreViewController(storeAnnotation.store)
     }
         
     func mapViewDidChangeVisibleRegion(_ mapView: MKMapView) {

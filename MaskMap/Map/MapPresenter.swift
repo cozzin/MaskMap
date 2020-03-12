@@ -1,5 +1,5 @@
 //
-//  StorePresenter.swift
+//  MapPresenter.swift
 //  MaskMap
 //
 //  Created by SeongHo.Hong on 2020/03/11.

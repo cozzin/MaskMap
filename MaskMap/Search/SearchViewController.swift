@@ -136,6 +136,7 @@ extension SearchViewController: UITableViewDelegate {
         
         if let viewModel = viewModel {
             storeTapHandler?((viewModel, viewModel.stores[indexPath.row]))
+            searchBar.resignFirstResponder()
         }
     }
 

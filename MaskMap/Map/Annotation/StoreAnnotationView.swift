@@ -11,14 +11,19 @@ import MapKit
 
 final class StoreAnnotationView: MKMarkerAnnotationView {
     
+    private(set) var storeAnnotation: StoreAnnotation?
+    
     override func prepareForReuse() {
         super.prepareForReuse()
         
+        storeAnnotation = nil
         markerTintColor = .white
         glyphText = nil
     }
     
     func configure(_ storeAnnotation: StoreAnnotation) {
+        self.storeAnnotation = storeAnnotation
+        
         canShowCallout = true
         calloutOffset = CGPoint(x: -5, y: 5)
         
